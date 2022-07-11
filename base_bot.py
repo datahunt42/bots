@@ -11,8 +11,8 @@ detail_handler = ['Кран', 'Липучка', 'Кнопка', 'Крутилк�
 # основные переменные
 i = 0
 a = 0
-API_TOKEN = '5473096213:AAFIMTv7Q5ELnFXAZ0uj6iougXZgVLE7tJ8'
-photo = 'https://chudo-udo.info/media/k2/items/cache/b98eb4e6d4e5af022817653939abd5f0_XL.jpg'
+API_TOKEN = #токен бота
+photo = #фото
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
 fn = 'Telegram.xlsx'
@@ -102,7 +102,7 @@ async def payment(message: types.Message):
                            title='Игрушка',
                            description='четотам',
                            payload='al-use',
-                           provider_token='1744374395:TEST:a83375fc3b7a41d1a47d',
+                           provider_token=, #подставить провайдер токен
                            prices=prices,
                            currency='RUB'
 
@@ -118,7 +118,7 @@ async def checkout_query(pre_checkout_query: PreCheckoutQuery):
 async def successful_payment(message: types.Message):
     doc = open('Telegram.xlsx', 'rb')
     await bot.send_message(message.chat.id, text="оплата прошла успешно", reply_markup=keyboard)
-    await bot.send_document(chat_id='896595378', document=doc)
+    await bot.send_document(chat_id=, document=doc) #подставить id админа
 
 
 if __name__ == '__main__':
